@@ -1,0 +1,737 @@
+{
+	"info": {
+		"_postman_id": "d68f9a7b-f25c-44c9-9f95-66968499ceaa",
+		"name": "DjangoSample",
+		"description": "User Endpoints\n\n- Listing : /api/users/ (GET)\n    \n- Detail : /api/users/1/ (GET)\n    \n- Create User : /api/users/ (POST)\n    \n- Update User : /api/users/1/ (PUT)\n    \n- Delete User : /api/users/1/ (DELETE)\n    \n\nPost Endpoints\n\n- Listing : /api/posts/ (GET)\n    \n- Detail : /api/posts/1/ (GET)\n    \n- Create User : /api/posts/ (POST)\n    \n- Update User : /api/posts/1/ (PUT)\n    \n- Delete User : /api/posts/1/ (DELETE)\n    \n\nComment Endpoints\n\n- Listing : /api/comments/ (GET)\n    \n- Detail : /api/comments/1/ (GET)\n    \n- Create User : /api/comments/ (POST)\n    \n- Update User : /api/comments/1/ (PUT)\n    \n- Delete User : /api/comments/1/ (DELETE)\n    \n\nAlbum Endpoints\n\n- Listing : /api/albums/ (GET)\n    \n- Detail : /api/albums/1/ (GET)\n    \n- Create User : /api/albums/ (POST)\n    \n- Update User : /api/albums/1/ (PUT)\n    \n- Delete User : /api/albums/1/ (DELETE)\n    \n\nPhotos Endpoints\n\n- Listing : /api/photos/ (GET)\n    \n- Detail : /api/photos/1/ (GET)\n    \n- Create User : /api/photos/ (POST)\n    \n- Update User : /api/photos/1/ (PUT)\n    \n- Delete User : /api/photos/1/ (DELETE)\n    \n\nTodo Endpoints\n\n- Listing : /api/todos/ (GET)\n    \n- Detail : /api/todos/1/ (GET)\n    \n- Create User : /api/todos/ (POST)\n    \n- Update User : /api/todos/1/ (PUT)\n    \n- Delete User : /api/todos/1/ (DELETE)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20295084"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "UserList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe\",\n  \"username\": \"johndoe\",\n  \"email\": \"john@example.com\",\n  \"address\": {\n    \"street\": \"123 Main St\",\n    \"city\": \"Anytown\",\n    \"zipcode\": \"12345\",\n    \"suite\": \"Apt. 556\",\n    \"geo\": {\n      \"lat\": \"37.7749\",\n      \"lng\": \"-122.4194\"\n    }\n  },\n  \"phone\": \"555-1234\",\n  \"website\": \"https://johndoe.com\",\n  \"company\": {\n    \"name\": \"Acme Corp\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Updated\",\n  \"username\": \"johnupdated\",\n  \"email\": \"johnupdated@example.com\",\n  \"address\": {\n    \"street\": \"456 New Street\",\n    \"suite\": \"Apt 3\",\n    \"city\": \"New City\",\n    \"zipcode\": \"54321\",\n    \"geo\": {\n      \"lat\": \"37.7749\",\n      \"lng\": \"-122.4194\"\n    }\n  },\n  \"phone\": \"555-9876\",\n  \"website\": \"https://johnupdated.com\",\n  \"company\": {\n    \"name\": \"New Company Inc.\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Albums",
+			"item": [
+				{
+					"name": "AlbumList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/albums/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"albums",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddAlbum",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user\": 2,\n  \"title\": \"Summer Vacation\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/albums/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"albums",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateAlbum",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user\": 2,\n  \"title\": \"Summer VacationX\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/albums/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"albums",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteAlbum",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/albums/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"albums",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "PostList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/posts/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddPost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user\": 2,\n  \"title\": \"My First Post\",\n  \"body\": \"This is the body of my first post. It contains detailed information about the post.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/posts/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePost",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user\": 2,\n  \"title\": \"My First PostXX\",\n  \"body\": \"This is the body of my first post. It contains detailed information about the post.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/posts/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletePost",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/posts/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"posts",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Photos",
+			"item": [
+				{
+					"name": "PhotoList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/photos/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"photos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddPhoto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"album\": 1,\n  \"title\": \"Sample Photo\",\n  \"url\": \"https://example.com/photo.jpg\",\n  \"thumbnail_url\": \"https://example.com/thumbnail.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/photos/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"photos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePhoto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"album\": 1,\n  \"title\": \"Sample PhotoXX\",\n  \"url\": \"https://example.com/photo.jpg\",\n  \"thumbnail_url\": \"https://example.com/thumbnail.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/photos/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"photos",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletePhoto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/photos/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"photos",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "CommentList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddComment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"post\": 1,\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"body\": \"This is a sample comment.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateComment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"post\": 1,\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"body\": \"This is a sample commentXX.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteComment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Todos",
+			"item": [
+				{
+					"name": "TodoList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/todos/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"todos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddTodo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user\": 2,\n  \"title\": \"Buy groceries\",\n  \"completed\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/todos/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"todos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateTodo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user\": 2,\n  \"title\": \"Buy groceries\",\n  \"completed\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/todos/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"todos",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteTodo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/todos/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"todos",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

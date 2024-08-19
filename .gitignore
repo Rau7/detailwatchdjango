@@ -1,0 +1,67 @@
+# Python bytecode
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+media/
+
+# Environment variables
+.env
+
+# Virtual environment
+venv/
+ENV/
+env/
+venv.bak/
+.env/
+
+# VS Code
+.vscode/
+
+# IDEs
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Python egg files
+*.egg
+*.egg-info/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# PyCharm
+.idea/
+
+# Coverage reports
+.coverage
+*.cover
+*.py,cover
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pylint
+pylint-report.txt
+pylint-runner.log
+
+# Pytest
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.log
