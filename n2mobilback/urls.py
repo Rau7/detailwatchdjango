@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+#core app url has been added under api/ endpoint
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('core.urls')),

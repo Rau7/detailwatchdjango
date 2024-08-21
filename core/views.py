@@ -2,14 +2,19 @@ from rest_framework import viewsets
 from .models import User, Address, Geo, Company, Album, Photo, Todo, Post, Comment
 from .serializers import UserSerializer, AlbumSerializer, PhotoSerializer, TodoSerializer, PostSerializer, CommentSerializer
 
+# adding a new user includes address and company objects
+# desutructuring address and company objects and adding them to their related fields
+# same rules apply for update operations
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
     def perform_create(self, serializer):
+        # desutructuring address and company from request
         address_data = self.request.data.pop('address')
         company_data = self.request.data.pop('company')
 
+        # get geo object from address object
         geo_data = address_data.pop('geo')
         geo = Geo.objects.create(**geo_data)
         address = Address.objects.create(geo=geo, **address_data)
@@ -40,6 +45,8 @@ class UserViewSet(viewsets.ModelViewSet):
 
         serializer.save(address=address, company=company)
 
+# for all viewsets inherits ModelViewSet's behaviour
+# including all CRUD operations
 class AlbumViewSet(viewsets.ModelViewSet):
     queryset = Album.objects.all()
     serializer_class = AlbumSerializer

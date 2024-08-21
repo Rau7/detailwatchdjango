@@ -1,5 +1,10 @@
 from django.db import models
 
+
+#for the sake of simplicity and nested objects used in user model
+#company, address fields are divided into their own models
+#also geo model is created from inside of address field given in sample json
+
 class Geo(models.Model):
     lat = models.CharField(max_length=100)
     lng = models.CharField(max_length=100)
@@ -7,7 +12,7 @@ class Geo(models.Model):
     def __str__(self):
         return f"Lat: {self.lat}, Lng: {self.lng}"
 
-
+#geo model is related to address model (onetoone field)
 class Address(models.Model):
     street = models.CharField(max_length=200)
     suite = models.CharField(max_length=200)
@@ -37,7 +42,7 @@ class User(models.Model):
     def __str__(self):
         return self.name
     
-
+# album model is related to user model (foreignkey)
 class Album(models.Model):
     user = models.ForeignKey('User', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
@@ -45,6 +50,9 @@ class Album(models.Model):
     def __str__(self):
         return self.title
 
+
+# photo model is related to album model (foreignkey) it can be done with onetoone field also
+# others are also can be done with onetoone field
 class Photo(models.Model):
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
@@ -54,7 +62,7 @@ class Photo(models.Model):
     def __str__(self):
         return self.title
     
-
+# todo model is related to user model (foreignkey)
 class Todo(models.Model):
     user = models.ForeignKey('User', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
@@ -63,7 +71,7 @@ class Todo(models.Model):
     def __str__(self):
         return self.title
     
-
+# post model is related to user model (foreignkey)
 class Post(models.Model):
     user = models.ForeignKey('User', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
@@ -72,7 +80,7 @@ class Post(models.Model):
     def __str__(self):
         return self.title
     
-
+# comment model is related to post model (foreignkey)
 class Comment(models.Model):
     post = models.ForeignKey('Post', on_delete=models.CASCADE)
     name = models.CharField(max_length=200)

@@ -1,6 +1,11 @@
 from rest_framework import serializers
 from .models import User, Address, Geo, Company, Album, Photo, Todo, Post, Comment
 
+# simple serializers for each model
+# the important or the tricky one is userserializer that includes address and company
+# user model got no fields like address and company, but we use address and company serializers-
+#- to use it in user serializer
+
 class GeoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Geo

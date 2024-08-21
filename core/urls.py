@@ -6,6 +6,8 @@ from .views import  UserViewSet, PhotoViewSet, AlbumViewSet, TodoViewSet, PostVi
 from rest_framework import routers
 
 
+#all necessary urls have been added
+
 router = routers.DefaultRouter();
 
 router.register('users', UserViewSet)

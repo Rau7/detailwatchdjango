@@ -74,15 +74,15 @@ WSGI_APPLICATION = 'n2mobilback.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
+#for postgresql settings
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'root',
-        'HOST': 'localhost',  # or your PostgreSQL server IP
-        'PORT': '5432',        # default PostgreSQL port
+        'HOST': 'localhost',  
+        'PORT': '5432',        
     }
 }
 
